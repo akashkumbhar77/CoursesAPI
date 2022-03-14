@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Django App1</title>
+</head>
+<body>
+<h1> <u> FILE UPLOAD HANDELING IN DJANGO </u> </h1>
+{% if messages %}
+<ul>
+{% for message in messages %}
+<li>{{ message }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+<div style = "max-width:470px;">
+<form method = 'POST' enctype="multipart/form-data">
+{{ file.as_p }}
+{% csrf_token %}
+<input type="submit" class="btn btn-primary" value="submit">
+</form>
+</div>
+</body>
+</html>
